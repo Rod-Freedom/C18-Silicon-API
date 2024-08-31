@@ -15,12 +15,12 @@
 
 ## **ABOUT THE PROJECT**
 ### **Overview**
-Welcome to ***Silicon***, your go-to destination for all things tech! At ***Silicon***, we believe that technology is not just about circuits and code but about the flow of ideas that shape our digital future.
+Welcome to ***Silicon API***, your go-to destination for all things tech! At ***Silicon API***, we believe that technology is not just about circuits and code but about the flow of ideas that shape our digital future. This is a back-end API to manage users, posts and likes in the most efficient way!
 
 Our name, reflects the fundamental element of the tech world—silicon chips are the bedrock of modern computing. Just as silicon enables the flow of information in electronics, we aim to enable the flow of ideas through our content, helping you to innovate and excel.
 
 *Read the documentation [**here**](https://github.com/Rod-Freedom/C18-Silicon-API).* <br>
-*Watch our tutorial [**here**](https://youtu.be/6y5HbyOrYkY).*
+*Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
 
 <br>
 <br>
@@ -40,30 +40,19 @@ Our name, reflects the fundamental element of the tech world—silicon chips are
 
 ## Resources
 * **Models**
-    * For Sequelize
+    * For Mongoose
         * Models.
-        * `Models.create()`
-        * `Models.destroy()`
-        * `Models.findAll()`
-            * `include: []`
-        * `Models.findByPk()`
-            * `where: {}`
-        * `Models.hasOne()`
-        * `Models.hasMany()`
-        * `Models.belongsTo()`
-        * `onDelete`, `foreignKey`, `autoIncrement`, etc.
-    * Hooks
-* **Views**
-    * For handlebars
-        * Helpers.
-            * Binary converter.
-            * Date formatter.
-            * Username formatter.
-        * Layouts.
-        * Partials.
-        * Built-in Helpers
-            * `#if` `else`
-            * `#each as | |`
+        * `new schema()`
+        * `model()`
+        * `Model.find()`
+        * `Model.where()`
+        * `Model.save()`
+        * `Model.findOne()`
+        * `Model.findOneAndDelete()`
+        * `Model.findOneAndUpdate()`
+        * Combine vanilla JS with Mongoose to alter data.
+        * `schema.method`
+        * `schema.virtual().get()`
 * **Controllers**
     * For Express.js
         * RESTful API routes with `express.Router()`.
@@ -73,6 +62,7 @@ Our name, reflects the fundamental element of the tech world—silicon chips are
         * `res.send()`.
         * `res.json()`.
         * `res.render()`.
+        * `app.route().method()` routes.
         * `app.get()` routes.
         * `app.post()` routes.
         * `app.delete()` routes.
@@ -90,23 +80,15 @@ Our name, reflects the fundamental element of the tech world—silicon chips are
         * Structured error handling to prevent unexpected crashes.
     * For Node.js
         * NPM packages
-            * Dotenv
-            * Sequelize
             * Express.js
-            * PG
-            * bycript
-            * Express.js Session
-            * Sequelize Session
-            * Express Handlebars
-        * `process.env` variables.
-        * `res.session` variables.
+            * Mongoose
 
 <br>
 
 [(Back to the Top)](#about-the-project)
 
 ## Get Started
-*Watch our tutorial [**here**](https://youtu.be/6y5HbyOrYkY).*
+*Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
 
 No installation is required, just go to the site [here](https://silicon-a6vt.onrender.com) and explore Silicon!
 
@@ -115,7 +97,7 @@ No installation is required, just go to the site [here](https://silicon-a6vt.onr
 [(Back to the Top)](#about-the-project)
 
 ## Usage
-*Watch our tutorial [**here**](https://youtu.be/6y5HbyOrYkY).*
+*Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
 
 **Silicon** is easy and intuitive to use.
 
