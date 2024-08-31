@@ -1,16 +1,30 @@
-import { User } from "../models/index.js";
+import { User, Post } from "../models/index.js";
 
 export default class UserCtrl {
     static async getUsers (req, res) {
         try {
             const users = await User.find()
-                .select('-__v')
-                .populate('posts links', '-__v -posts')
+                .select('-__v -posts -links');
             
             if (!users || users.length === 0) res.status(200).json({ message: 'Sorry, no users yet!' })
             else res.status(200).json(users)
 
         } catch (error) {
+            console.log(error)
+            res.status(400).json(error)
+        }
+    }
+    
+    static async getUsersFull (req, res) {
+        try {
+            const users = await User.find()
+                .populate('posts links')
+            
+            if (!users || users.length === 0) res.status(200).json({ message: 'Sorry, no users yet!' })
+            else res.status(200).json(users)
+
+        } catch (error) {
+            console.log(error)
             res.status(400).json(error)
         }
     }
@@ -21,7 +35,7 @@ export default class UserCtrl {
         try {
             const user = await User.findOne(params)
                 .select('-__v')
-                .populate('posts links', '-__v -posts');
+                .populate('posts links', '-__v -posts -user');
             
             if (!user) res.status(404).json({ message: 'Sorry, no user found' })
             else res.status(200).json(user)
@@ -46,14 +60,38 @@ export default class UserCtrl {
     }
     
     static async deleteUser (req, res) {
-        const { params } = req;
+        const { params, params: { _id: userID } } = req;
         
         try {
+            const postsQuery = { user: userID };
+            const linksQuery = { links: userID };
+
             const deletedUser = await User.deleteOne(params);
+            const deletedPosts = await Post.deleteMany(postsQuery);
+            const linkedUsers = await User.find(linksQuery);
+
+            let index = 0;
+            const limit = linkedUsers.length;
+            const updatedUsers = [];
+
+            const deleteLinks = async () => {
+                const i = linkedUsers[index].links.indexOf(userID);
+                linkedUsers[index].links.splice(i, 1);
+                const uptUser = await linkedUsers[index].save();
+                
+                updatedUsers.push(uptUser);
+                index++;
+
+                if (index < limit) await deleteLinks()
+                else return
+            }
+
+            await deleteLinks();
             
-            res.status(200).json(deletedUser);
+            res.status(200).json({deletedUser, deletedPosts, updatedUsers});
 
         } catch (error) {
+            console.log(error)
             res.status(400).json(error);
         }
     }
@@ -99,7 +137,7 @@ export default class UserCtrl {
             userOne = await userOne.save();
             userTwo = await userTwo.save();
             
-            return res.status(200).json({ userOne, userTwo });
+            return res.status(200).json({ user: userOne, linkedUser: userTwo });
 
         } catch (error) {
             res.status(400).json(error);
