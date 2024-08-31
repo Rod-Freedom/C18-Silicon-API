@@ -7,12 +7,17 @@ router.route('/')
     .get(UserCtrl.getUsers)
     .post(UserCtrl.addUser);
 
+router.route('/populated')
+    .get(UserCtrl.getUsersFull)
+
 router.route('/:_id')
     .get(UserCtrl.getUser)
-    .put(UserCtrl.addRemoveLink)
+    .put(UserCtrl.updateUser)
     .delete(UserCtrl.deleteUser);
 
+router.route('/link/:_id')
+    .put(UserCtrl.addRemoveLink);
+
 router.route('/update/:_id')
-    .put(UserCtrl.updateUser);
 
 export default router;

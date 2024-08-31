@@ -7,4 +7,9 @@ router.route('/')
     .get(PostCtrl.getPosts)
     .post(PostCtrl.addPost)
 
+router.route('/:_id')
+    .get(PostCtrl.getPost)
+    .put(PostCtrl.updatePost)
+    .delete(PostCtrl.deletePost)
+
 export default router;
