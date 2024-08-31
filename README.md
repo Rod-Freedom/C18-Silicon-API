@@ -90,7 +90,27 @@ Our name, reflects the fundamental element of the tech world—silicon chips are
 ## Get Started
 *Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
 
-No installation is required, just go to the site [here](https://silicon-a6vt.onrender.com) and explore Silicon!
+<br>
+
+> **IMPORTANT |** ***Silicon API** isn't online yet, so you'll have to run it locally.*
+
+<br>
+
+Once you have the repo on your computer after running `git clone`, open your command line. Make sure to open the ***Silicon API*** repo folder in your terminal. Use `npm i` to install all the modules needed to run ***Silicon API***.
+
+First clone:
+
+```bash
+$ git clone https://github.com/Rod-Freedom/C18-Silicon-API.git
+```
+
+<br>
+
+Finally, install the modules, and you're ready to go:
+
+```bash
+$ npm i
+```
 
 <br>
 
@@ -99,21 +119,34 @@ No installation is required, just go to the site [here](https://silicon-a6vt.onr
 ## Usage
 *Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
 
-**Silicon** is easy and intuitive to use.
+> **IMPORTANT |** ***Silicon API** isn't online yet, so you'll have to run it locally.*
 
-You'll be redirected to the login page once you've entered the site as a new user. Go to the site [here](https://silicon-a6vt.onrender.com).
+<br>
 
-Click `Sign up` if you don't have a user yet; else, click on Login.
+***Silicon API*** is purely back-end. To run it locally, open the Silicon API folder in your terminal, then type `node server.js` or `npm start` and hit `enter`.
 
-> ![Login page](./assets/demos/Login_Demo.png)
+```bash
+$ npm start
+```
 
-After logging in, you'll be redirected to the home/feed page. There, you can like, post, and read anything you want.
+<br>
 
-> ![Login page](./assets/demos/Feed_Demo.png)
+You have `GET`, `POST`, `PUT` and `DELETE` methods for each route.
+The available routes for `/api`, are: 
+* /users
+    * /users/populated
+    * /link
+* /posts
+* /likes\* *Only `PUT` method*
 
-Your session will expire after ten minutes. If you want to log out yourself, just click the logout button at the top right corner.
+When doing a `PUT` or `DELETE`, you'll have to add the ID parameter route (/id) to target a specific user or post.
+You may also do it with `GET`.
 
-> ![Login page](./assets/demos/Logout_Demo.png)
+<br>
+
+<p align="left">
+  <img src="./assets/demos/routes_demo.png" width="350">
+</p>
 
 <br>
 
