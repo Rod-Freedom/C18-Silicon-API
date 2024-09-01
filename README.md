@@ -17,7 +17,7 @@
 ### **Overview**
 Welcome to ***Silicon API***, your go-to destination for all things tech! At ***Silicon API***, we believe that technology is not just about circuits and code but about the flow of ideas that shape our digital future. This is a back-end API to manage users, posts and likes in the most efficient way!
 
-Our name, reflects the fundamental element of the tech world—silicon chips are the bedrock of modern computing. Just as silicon enables the flow of information in electronics, we aim to enable the flow of ideas through our content, helping you to innovate and excel.
+Our name reflects the fundamental element of the tech world—silicon chips are the bedrock of modern computing. Just as silicon enables the flow of information in electronics, we aim to enable the flow of ideas through our content, helping you to innovate and excel.
 
 *Read the documentation [**here**](https://github.com/Rod-Freedom/C18-Silicon-API).* <br>
 *Watch our tutorial [**here**](https://youtu.be/a4s0oAX4zgU).*
